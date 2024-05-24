@@ -24,8 +24,7 @@ spawn3114_chance: 0.5
 spawn3114_min_players: 1
 
 ```
-##
 
-##Credits
+## Credits
 此插件之寫法架構參考自 [omgiamhungarian/PinkCandyReturns](https://github.com/omgiamhungarian/PinkCandyReturns/).
 Patch 寫法參考自[拦截/注入 游戏函数实现高级操作](https://wiki.aoe.top/BepInEx/%E6%8B%A6%E6%88%AA-%E6%B3%A8%E5%85%A5-%E6%B8%B8%E6%88%8F%E5%87%BD%E6%95%B0.html) 及 [Exiled 群組](https://discord.gg/PyUkWTg)
