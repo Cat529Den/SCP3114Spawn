@@ -53,12 +53,13 @@ namespace Spawn3114
             private static void Postfix()
             {
                 Traverse spawnerTraverse = Traverse.Create(typeof(Scp3114Spawner));
-                bool _ragdollsSpawned = false;
+                bool _ragdollsSpawned = spawnerTraverse.Field("_ragdollsSpawned").GetValue<bool>();
                 bool overrideHuman = Singleton.Config.Spawn3114OverridesHumanQueue;
                 float spawnChance = Singleton.Config.Spawn3114Chance;
                 int minPlayer = Singleton.Config.Spawn3114MinPlayers;
-                
-                List<ReferenceHub> SpawnCandidates = new List<ReferenceHub>();
+
+                List<ReferenceHub> SpawnCandidates = spawnerTraverse.Field("SpawnCandidates").GetValue<List<ReferenceHub>>();
+                //List <ReferenceHub> SpawnCandidates = new List<ReferenceHub>();
                 //Log.Info("Patch spawn");
 
                 if (!NetworkServer.active)
@@ -81,16 +82,16 @@ namespace Spawn3114
                         PlayerRolesUtils.ForEachRole<FpcStandardScp>(new Action<ReferenceHub>(SpawnCandidates.Add));
                     }
                     
-                    Log.Info("value greater than " + spawnChance.ToString() + "candidates: " + SpawnCandidates.Count.ToString());
+                    //Log.Info("value greater than " + spawnChance.ToString() + "candidates: " + SpawnCandidates.Count.ToString());
                     if (SpawnCandidates.Count >= minPlayer)
                     {
                         //Log.Info("Try Spawn.");
                         SpawnCandidates.RandomItem().roleManager.ServerSetRole(RoleTypeId.Scp3114, RoleChangeReason.RoundStart);
-                        _ragdollsSpawned = true;
+                        //_ragdollsSpawned = true;
                     }
                 }
                 spawnerTraverse.Field("_ragdollsSpawned").SetValue(_ragdollsSpawned);
-                spawnerTraverse.Field("SpawnCandidates").GetValue<List<ReferenceHub>>().AddRange(SpawnCandidates);
+                //spawnerTraverse.Field("SpawnCandidates").GetValue<List<ReferenceHub>>().AddRange(SpawnCandidates);
                 //Log.Info("Patch finished.");
             }
 
