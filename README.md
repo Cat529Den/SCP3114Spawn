@@ -24,6 +24,7 @@ spawn3114_chance: 0.5
 spawn3114_min_players: 1
 
 ```
+##
 
 ##Credits
 此插件之寫法架構參考自 [omgiamhungarian/PinkCandyReturns](https://github.com/omgiamhungarian/PinkCandyReturns/).
