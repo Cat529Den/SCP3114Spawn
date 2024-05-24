@@ -1,7 +1,13 @@
 # SCP-3114
 讓SCP-3114可以自動生成的SCP Secret Laboratory插件
 
-## 安裝:
+# 說明
+本插件為一NwApi插件
+將SCP-3114加入SCP陣營或人類玩家陣營的生成池中(可在config.yml中調整)
+3114的生成機率需手動調整(預設50%)
+
+
+## 安裝
 1. 請到 Releases 下載Spawn3114.dll 及相依的 0Harmony.dll
 2. 將 Spawn3114.dll 移至 ```PluginAPI/plugins/(server_port)```, 0Harmony.dll 移至```PluginAPI/plugins/(server_port)/dependencies```
 
