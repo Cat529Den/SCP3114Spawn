@@ -16,11 +16,13 @@
 
 ```yml
 
-# 啟用插件嗎?Whether the plugin is enabled.
+# 啟用插件嗎? Whether the plugin is enabled.
 is_enabled: true
-# 生成3114的機率Chance to spawn 3114.
+# 生成的3114會替代1名人類玩家嗎? Overrides the spawn queue of human players.
+spawn3114_overrides_human_queue: false
+# 生成3114的機率 Chance to spawn 3114.
 spawn3114_chance: 0.5
-# 生成3114的最少人數Minimal players to spawn 3114.
+# 生成3114的最少人數 Minimal players to spawn 3114.
 spawn3114_min_players: 1
 
 ```

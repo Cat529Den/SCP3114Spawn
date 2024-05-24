@@ -41,7 +41,7 @@ namespace Spawn3114
             Harmony harmony = new Harmony("Spawn3114test");
             Log.Info("In Patch");
             harmony.PatchAll();
-            Log.Info("Patch all.");
+            //Log.Info("Patch all.");
         }
 
 
@@ -59,7 +59,7 @@ namespace Spawn3114
                 int minPlayer = Singleton.Config.Spawn3114MinPlayers;
                 
                 List<ReferenceHub> SpawnCandidates = new List<ReferenceHub>();
-                Log.Info("Patch spawn");
+                //Log.Info("Patch spawn");
 
                 if (!NetworkServer.active)
                 {
@@ -67,7 +67,7 @@ namespace Spawn3114
                 }
 
                 _ragdollsSpawned = false;
-                Log.Info("Patch 50%");
+                //Log.Info("Patch 50%");
 
                 if (!(UnityEngine.Random.value >= spawnChance))
                 {
@@ -84,14 +84,14 @@ namespace Spawn3114
                     Log.Info("value greater than " + spawnChance.ToString() + "candidates: " + SpawnCandidates.Count.ToString());
                     if (SpawnCandidates.Count >= minPlayer)
                     {
-                        Log.Info("Try Spawn.");
+                        //Log.Info("Try Spawn.");
                         SpawnCandidates.RandomItem().roleManager.ServerSetRole(RoleTypeId.Scp3114, RoleChangeReason.RoundStart);
                         _ragdollsSpawned = true;
                     }
                 }
                 spawnerTraverse.Field("_ragdollsSpawned").SetValue(_ragdollsSpawned);
                 spawnerTraverse.Field("SpawnCandidates").GetValue<List<ReferenceHub>>().AddRange(SpawnCandidates);
-                Log.Info("Patch finished.");
+                //Log.Info("Patch finished.");
             }
 
         }
